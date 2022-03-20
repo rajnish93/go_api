@@ -22,7 +22,10 @@ func main() {
   app.Get("/", func(c *fiber.Ctx) error {
     return c.SendString("Hello, World 👋!")
 })
-  db.Connection()
+// DB connection & Migrate
+  connect:=db.Connection()
+  db.InitialMigration(connect)
+
 	port := config.ListenPort()
   app.Listen(port)
 }

@@ -5,6 +5,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
+	"github.com/rajnish93/go_api/config"
 	"github.com/rajnish93/go_api/db"
 )
 
@@ -22,6 +23,6 @@ func main() {
     return c.SendString("Hello, World 👋!")
 })
   db.Connection()
-	
-  app.Listen(":3000")
+	port := config.ListenPort()
+  app.Listen(port)
 }

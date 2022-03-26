@@ -5,7 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/rajnish93/go_api/models"
+	"github.com/rajnish93/go_api/src/modules/product"
+	"github.com/rajnish93/go_api/src/modules/user"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -41,5 +42,5 @@ func Connection() *gorm.DB {
 // Migrations
 func InitialMigration(db *gorm.DB) {
 	log.Print("Running Migrations...")
-	db.AutoMigrate(&models.User{})
+	db.AutoMigrate(&user.User{}, &product.Product{})
 }

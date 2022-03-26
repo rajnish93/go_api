@@ -5,8 +5,8 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
-	"github.com/rajnish93/go_api/config"
-	"github.com/rajnish93/go_api/db"
+	"github.com/rajnish93/go_api/src/config"
+	"github.com/rajnish93/go_api/src/db"
 )
 
 func init() {
